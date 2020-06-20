@@ -1,6 +1,5 @@
 package net.bitnine.ag3.agensalert.storage
 
-import javafx.application.Application.launch
 import kotlinx.coroutines.*
 import kotlinx.coroutines.NonCancellable.isActive
 import kotlinx.coroutines.channels.ticker
