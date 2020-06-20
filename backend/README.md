@@ -111,7 +111,13 @@ batch all test with no query
 
 start importing 'route' edges to 'airroutes' datasource for 200 sec
 
-### addV, addE statement (gremlin)
+1) remove existing 'route' edges (workspace로 확인해 볼 것)
+
+```bash
+curl -X POST -H "Content-Type: application/json" http://tonyne.iptime.org:8082/agens/gremlin -d '{"datasource":"airroutes","q":"g.E().hasLabel(\"route\").drop()"}'
+```
+
+2) addV, addE statement (gremlin)
 
 - nodes: g.addV("$label").property(T.id,"${idValue}").property(...)
 - edges: g.V("$srcIdValue").as("src").V("$dstIdValue").as("dst").addE("${label}").from("src").to("dst").property(T.id,"${idValue}").property(...)
