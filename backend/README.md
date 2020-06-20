@@ -57,12 +57,17 @@ Backend
   - GET "/admin/product/info"
 - 모니터링 작동 상태 변경 (실시간 스케줄링 정지/시작)
   - GET "/admin/activate", params={ q=true/false }
+  - monitoring [stop](http://tonyne.iptime.org:8082/admin/activate?q=false)
+  - monitoring [start](http://tonyne.iptime.org:8082/admin/activate?q=true)
 - 등록쿼리 전체에 대해 일별 집계를 from 'yyyy-MM-dd'부터 배치작업
   - GET "/admin/batch/all", params={ from='yyyy-MM-dd' }
+  - (http://tonyne.iptime.org:8082/admin/batch/all?from=2019-01-01)
 - 실시간 모니터링 테스트를 위한 airroutes 데이터 리로드 (country, airport, contains)
   - GET "/admin/realtime/reset", params={ datasource=airroutes }
+  - (http://tonyne.iptime.org:8082/admin/realtime/reset?datasource=airroutes)
 - 실시간 모니터링 테스트를 위해 airroutes 의 route 데이터를 sec 초 동안 임의로 import 수행 (route)
   - GET "/admin/realtime/test", params={ datasource=airroutes, sec=200 }
+  - (http://tonyne.iptime.org:8082/admin/realtime/test?datasource=airroutes&sec=-1)
 
         
 ## Sample data 'airroutes' for realtime
