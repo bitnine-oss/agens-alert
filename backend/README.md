@@ -64,8 +64,10 @@ curl -X POST -H "Content-Type: application/json" http://tonyne.iptime.org:8082/a
 
 - 모든 쿼리에 대한 일별 이벤트 집계의 전체 기간 조회
   - GET "/aggs"
+  - http://tonyne.iptime.org:8082/aggs
 - 선택 쿼리에 대한 일별 이벤트 집계의 전체 기간 조회
   - GET "/aggs/qid/{qid}"
+  - http://tonyne.iptime.org:8082/aggs/qid/101
 
 ### admin api for monitoring
 
