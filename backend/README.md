@@ -67,7 +67,7 @@ Backend
   - (http://tonyne.iptime.org:8082/admin/realtime/reset?datasource=airroutes)
 - 실시간 모니터링 테스트를 위해 airroutes 의 route 데이터를 sec 초 동안 임의로 import 수행 (route)
   - GET "/admin/realtime/test", params={ datasource=airroutes, sec=200 }
-  - (http://tonyne.iptime.org:8082/admin/realtime/test?datasource=airroutes&sec=-1)
+  - (http://tonyne.iptime.org:8082/admin/realtime/test?datasource=airroutes&sec=600)
 
         
 ## Sample data 'airroutes' for realtime
@@ -92,9 +92,14 @@ batch all test with no query
 
 start importing 'route' edges to 'airroutes' datasource for 200 sec
 
+### addV, addE statement (gremlin)
+
+- nodes: g.addV("$label").property(T.id,"${idValue}").property(...)
+- edges: g.V("$srcIdValue").as("src").V("$dstIdValue").as("dst").addE("${label}").from("src").to("dst").property(T.id,"${idValue}").property(...)
+
 <img height="400px" src="https://github.com/maxmin93/agens-alert/blob/master/images/AgensAlert-realtime_data.png">
 
-capturing real-time data for qid=109
+### capturing real-time data for qid=109
 
 <img src="https://github.com/maxmin93/agens-alert/blob/master/images/AgensAlert-api-realtime_test1.png">
 
